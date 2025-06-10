@@ -9,22 +9,22 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_iywne"]
 font = ExtResource("3_iywne")
-font_size = 250
+font_size = 500
 font_color = Color(0.455396, 0.00256287, 0.947329, 1)
 shadow_size = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-size = Vector2(540, 44)
+size = Vector2(1079, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnu2h"]
-size = Vector2(41.5, 975.387)
+size = Vector2(40.375, 2443.31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
-size = Vector2(605, 45)
+size = Vector2(1078.5, 45)
 
 [sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
 font = ExtResource("3_iywne")
-font_size = 38
+font_size = 64
 
 [node name="Game" type="Node2D"]
 light_mask = 2
@@ -32,29 +32,30 @@ visibility_layer = 2
 script = ExtResource("1_iywne")
 
 [node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2.5)
 texture = ExtResource("1_uwrxv")
 centered = false
 
 [node name="Pongs" type="Label" parent="."]
 visible = false
-offset_right = 539.0
-offset_bottom = 957.0
+offset_right = 1080.0
+offset_bottom = 2400.0
 text = "0"
 label_settings = SubResource("LabelSettings_iywne")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(270, 882)
+position = Vector2(540, 2106)
 collision_mask = 6
-speed = 800
+speed = 600
 
 [node name="TopWall" type="StaticBody2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
-position = Vector2(270, -22)
+position = Vector2(539.5, -22)
 shape = SubResource("RectangleShape2D_yqjtg")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
@@ -62,7 +63,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(-20.5, 462.307)
+position = Vector2(-21.1875, 1198)
 shape = SubResource("RectangleShape2D_lnu2h")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
@@ -70,7 +71,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(560.75, 462.387)
+position = Vector2(1100.88, 1196.35)
 shape = SubResource("RectangleShape2D_lnu2h")
 
 [node name="Hole" type="Area2D" parent="."]
@@ -78,18 +79,18 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(277.5, 982.5)
+position = Vector2(539.75, 2422)
 shape = SubResource("RectangleShape2D_lbhrr")
 debug_color = Color(1, 0, 0.0941176, 0.419608)
 
 [node name="Ball" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(270, 850)
+position = Vector2(540, 2074)
 collision_layer = 2
 collision_mask = 29
 
 [node name="Tutorial" type="Label" parent="."]
-offset_right = 539.0
-offset_bottom = 959.0
+offset_right = 1080.0
+offset_bottom = 2400.0
 text = "Aperte na tela para começar"
 label_settings = SubResource("LabelSettings_p57ef")
 horizontal_alignment = 1
@@ -99,16 +100,16 @@ autowrap_mode = 2
 [node name="Positions" type="Node2D" parent="."]
 
 [node name="Pos_01" type="Marker2D" parent="Positions"]
-position = Vector2(-152, 209)
+position = Vector2(-152, 422)
 
 [node name="Pos_02" type="Marker2D" parent="Positions"]
-position = Vector2(-153, 408)
+position = Vector2(-153, 1119)
 
 [node name="Pos_03" type="Marker2D" parent="Positions"]
-position = Vector2(639, 103)
+position = Vector2(1215, 759)
 
 [node name="Pos_04" type="Marker2D" parent="Positions"]
-position = Vector2(647, 296)
+position = Vector2(1207, 179)
 
 [node name="TimerSpawner" type="Timer" parent="."]
 wait_time = 3.0
